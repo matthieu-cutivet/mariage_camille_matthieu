@@ -1,0 +1,513 @@
+
+            <!DOCTYPE html>
+
+            <html lang="en">
+                <!-- JavaScript -->
+                <script src="static/js/jquery-3.4.1.min.js"></script>
+<script src="static/js/jquery-ui.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="static/js/lightslider.js"></script>
+<script src="static/js/lightGallery.js"></script>
+<script src="static/PyWebWidget.js"></script>
+
+                <head>
+                     <!-- Required meta tags -->
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    
+                    <!-- CSS -->
+                    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="static/css/all.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<link rel="stylesheet" type="text/css" href="static/css/lightslider.css">
+<link rel="stylesheet" type="text/css" href="static/css/lightGallery.css">
+<link rel="stylesheet" type="text/css" href="static/PyWebWidget.css">
+
+                    <style>
+                        .pww_not_displayed{ display : none!important ;  show-border : False!important ; }
+body{ display : flex; overflow-y : scroll; overflow-x : hidden; flex-direction : column; show-border : False; height : 100vh; width : 100vw;}
+.pww_full_width_not_scrolling_container{ display : flex; flex-direction : column; show-border : False; width : 100%; flex-grow : 0; flex-shrink : 0;}
+.pww_horizontal_container_align_center{ display : flex; align-items : center; flex-direction : row; show-border : False;}
+.disabled_link_or_btn{ pointer-events : none!important ;  color : #5858587a!important ;  show-border : False!important ; }
+.pww_horizontal_container_align_center{ display : flex; align-items : flex-start; flex-direction : row; show-border : False;}
+.zero_height_and_no_overflow{ overflow-y : hidden; show-border : False; height : 0;}
+.circle_border{ border : solid; border-width : 2px; border-radius : 100%;}
+@media (max-width:500px){ html{ show-border : False; font-size : 8px;} }
+@media (max-width:700px){ @media (min-width:500px){ html{ show-border : False; font-size : 10px;} } }
+@media (max-width:1000px){ @media (min-width:700px){ html{ show-border : False; font-size : 12px;} } }
+@media (max-width:2000px){ @media (min-width:1000px){ html{ show-border : False; font-size : 14px;} } }
+@media (min-width:2000px){ html{ show-border : False; font-size : 16px;} }
+body{ background-color : rgb(0,0,0,0.05); show-border : False; font-family : myriad-pro,sans-serif,Helvetica Neue,Helvetica;}
+#navbar{ position : fixed; show-border : False; width : 100vw; z-index : 1000000;}
+#navbar_main_container{ padding-right : 2.5rem; padding-left : 2.5rem; padding-bottom : 1rem; padding-top : 1rem; show-border : False;}
+#brand{ margin-right : 1.5rem; margin-left : 1.5rem; show-border : False; font-weight : bolder; font-size : 1.25rem;}
+#menu_with_navbar_links{ show-border : False; font-weight : bold;}
+#main_image{ show-border : False; height : 100%;}
+.section{ justify-content : center; align-items : center; margin-top : 5rem; show-border : False; min-height : 30%;}
+.titre_section{ margin-bottom : 2rem; show-border : False; font-weight : 700; font-family : 'Alex Brush',myriad-pro,sans-serif,Helvetica Neue,Helvetica;; font-size : 2rem;}
+.sous_titre_section{ margin-bottom : 2rem; show-border : False; font-size : 1.5rem;}
+.colonnes_lieu{ padding : 1rem; show-border : False; width : 50%;}
+.label_info_on_location{ margin-right : 0.75rem; margin-bottom : 1rem; margin-top : 1rem; show-border : False; width : 5rem; font-weight : bold; font-size : 1rem;}
+.field_info_on_location{ margin-bottom : 1rem; margin-top : 1rem; show-border : False; font-size : 1rem;}
+#gift_icon{ show-border : False; font-size : 5rem;}
+.link_carre_photo{ margin : 1rem; show-border : False;}
+.carre_photo{ show-border : False; width : 20vw;}
+@media (min-width:601px){ #navbar_main_container{ display : flex; align-items : center; flex-direction : row; show-border : False; flex-grow : 1;} }
+@media (min-width:601px){ #navbar{ background-color : rgb(0,0,0,0); color : rgb(255,255,255); show-border : False;} }
+@media (min-width:601px){ .navbar_when_scrolled_down{ background-color : rgb(255,255,255)!important ;  color : rgb(31, 37, 107)!important ;  show-border : False!important ; } }
+@media (min-width:601px){ .hidden_if_large_screen{ display : none; show-border : False;} }
+@media (min-width:601px){ .navbar_link{ margin-left : 1.5rem; show-border : False;} }
+@media (min-width:601px){ #menu_with_navbar_links{ display : flex!important ;  align-items : center!important ;  flex-direction : row!important ;  show-border : False!important ; } }
+@media (max-width:601px){ #navbar{ background-color : rgb(255, 255, 255); color : rgb(31, 37, 107); show-border : False; flex-grow : 1;} }
+@media (max-width:601px){ #navbar_main_container{ display : flex; align-items : flex-start; flex-direction : column; show-border : False; width : 100%; flex-grow : 0;} }
+@media (max-width:601px){ #menu_with_navbar_links{ display : flex; align-items : flex-start; flex-direction : column; background-color : rgb(255,255,255); padding-right : 2rem; padding-left : 2rem; show-border : False; width : fit-content;} }
+@media (max-width:601px){ #menu_with_navbar_links:not(.zero_size_when_small_screen){ show-border : False; height : fit-content;} }
+@media (max-width:601px){ #ctn_brand_and_menu_btn{ show-border : False; width : 100%;} }
+@media (max-width:601px){ #zero_size_ctn_for_navbar_link{ overflow-y : visible; overflow-x : visible; show-border : False; height : 0; width : 0; z-index : 1000;} }
+@media (max-width:601px){ .navbar_link{ flex-wrap : nowrap; margin-bottom : 0.5rem; margin-top : 0.5rem; show-border : False;} }
+@media (max-width:601px){ .zero_size_when_small_screen{ overflow-y : hidden; show-border : False; height : 0;} }
+
+            @font-face {
+                  font-family: 'Khatija Calligraphy';
+                  src: url('./static/fonts/Khatija-Calligraphy.woff') format('woff') /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */  , 
+                  url('./static/fonts/Khatija Calligraphy.ttf') format('truetype')  ;/* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+                
+                  
+                }
+        
+                    </style>
+                    
+                    <meta charset="UTF-8">
+                    <title>Camille & Matthieu</title>
+                </head>
+                <body>
+                    <nav id = 'navbar'  class='PyWebWidget' style = 'show-border : False;'  ><div id = 'navbar_main_container'  class='PyWebWidget' style = 'show-border : False;'  ><div id = 'ctn_brand_and_menu_btn'  class='PyWebWidget pww_horizontal_container_align_center' style = 'show-border : False;'  >
+            <a id = 'brand'  class='PyWebWidget' style = 'show-border : False;'  href = '#'>
+                #CAMILLE&MATTHIEU2021
+            </a>
+        
+            <div  id = 'kL2jCATCQP4u9xyIiPElKpFCOCLmmo'  class='PyWebWidget hidden_if_large_screen' style = 'show-border : False; flex-grow : 1;'  ></div>
+        
+                <button type="button" id = 'u33Yu4TEsRM5TRKkPVWsMJPjv1Nlum'  class='PyWebWidget btn btn-primary hidden_if_large_screen' style = 'show-border : False;'  >
+                    Menu
+                <a id = 'CF6j1fsPjav5aXIvNJKKvxHT8Rt6Zz'  class='PyWebWidget' style = 'show-border : False;'  href = "#"><i class="fas fa-bars"></i></a>
+                
+                </button>
+                </div>
+            <div  id = 'eM8sDoMV0KpD2KoXEPM65BzKEaekl1'  class='PyWebWidget hidden_if_small_screen' style = 'show-border : False; flex-grow : 1;'  ></div>
+        <div id = 'zero_size_ctn_for_navbar_link'  class='PyWebWidget' style = 'show-border : False;'  ><div id = 'menu_with_navbar_links'  class='PyWebWidget zero_size_when_small_screen' style = 'show-border : False;'  >
+            <a id = 'uqsD1mPMmSoy0cb1W2CrH9Vj9IL1Wj'  class='PyWebWidget navbar_link' style = 'show-border : False;'  href = '#'>
+                SAVE THE DATE
+            </a>
+        
+            <a id = 'mBu9e6TICWNEW4i1Y894q0fDqfPebJ'  class='PyWebWidget navbar_link' style = 'show-border : False;'  href = '#'>
+                LIEUX
+            </a>
+        
+            <a id = 'KIiTYrwvIqhKyEXZaiYBqOyCmMVrTL'  class='PyWebWidget navbar_link' style = 'show-border : False;'  href = '#'>
+                PHOTOS
+            </a>
+        
+            <a id = '0EaJ3V47pFPVm1cLpD5LdfnLE3I3gV'  class='PyWebWidget navbar_link' style = 'show-border : False;'  href = '#'>
+                LISTE
+            </a>
+        </div></div></div></nav>
+<div id = 'main_image'  class='PyWebWidget pww_full_width_not_scrolling_container' style = 'justify-content : center; align-items : center; 
+                           background-size: cover;
+                        
+                background-image : url(static/img/photo_cathedrale_main_flat.jpg); 
+                background-repeat: no-repeat;
+                background-clip: border-box;
+                background-position-x:50%;
+             show-border : False;'  >
+            <p id = 'ZRj2J6lQ8YioHGjqVsxfYpsaPtEasz'  class='PyWebWidget' style = 'color : rgb(255,255,255); show-border : False; font-family : Khatija Calligraphy; font-size : 4rem;' >
+                Camille & Matthieu
+            </p>
+        
+                <a id = '29tlqQ7UYJywD32eASIpRtUNBFnomX'  class='PyWebWidget circle_border animated' style = 'display : flex; justify-content : center; align-items : center; border-color : rgb(255,255,255); color : rgb(255,255,255); show-border : False; height : 5rem; width : 5rem; font-size : 3rem;'  href = "#"><i class="fas fa-angle-double-down"></i></a>
+                </div>
+<div id = 'section_save_the_date'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'show-border : False;'  >
+            <p id = 'TFbNcde8Uv9hwnLIV7G30qH7TccFso'  class='PyWebWidget titre_section' style = 'show-border : False;' >
+                Save the date !
+            </p>
+        
+            <p id = 'oSvN2rz6X1DK0m7mQfIJBDThvYuGkT'  class='PyWebWidget sous_titre_section' style = 'show-border : False;' >
+                Nous nous marions le <b>26 Juin 2021</b> et avons hâte de partager ce moment avec vous
+            </p>
+        
+            <a id = '2R87RfQ0blZjzcaWwfanQ9L8JEUQQc'  class='PyWebWidget sous_titre_section' style = 'show-border : False;'  href = 'https://docs.google.com/forms/d/e/1FAIpQLSfnS9RpSWypxRu9FZzVduDTXVE94eIdWACS4TMEi8MRYtWAcA/viewform?usp=sf_link'>
+                Si vous ne l'avez pas encore fait, merci de nous confirmer votre présence en cliquant sur ce lien.
+            </a>
+        </div>
+<div id = 'sQSwsQ6bsmySSsQx4H0njN80YuXPbd'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'justify-content : center; align-items : center; 
+                           background-size: cover;
+                        
+                background-image : url(static/img/cathedrale.jpg); 
+                background-repeat: no-repeat;
+                background-clip: border-box;
+                background-position-x:50%;
+             margin-top : 50px; show-border : False; min-height : 50%;'  ></div>
+<div id = 'lieux_section'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'margin-top : 50px; show-border : False;'  >
+            <p id = 'juAQjdFVJbUOetIPqNauaurO3It85k'  class='PyWebWidget titre_section' style = 'show-border : False;' >
+                Lieux
+            </p>
+        <div id = 'KiMFemsyVCLSxi7HcJR3vu98F7k4dM'  class='PyWebWidget row justify-content-center' style = 'show-border : False; width : 100%;'  ><div id = 'ZTEhvIlZrYtkcd49TyCp2JPVQJ1brk'  class='PyWebWidget col-sm-6 col-md-4 col-lg-3' style = 'show-border : False;'  >
+            <p id = 'YFbcwdyIkWEUNnOtkjGqHXJ9v1wDpc'  class='PyWebWidget sous_titre_section' style = 'show-border : False;' >
+                Cérémonie religieuse
+            </p>
+        <div id = 'oYVwrdxUl1eYlH3iKC3z7jsnx22xJn'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = 'olorkD0VsfOTPD5bxhQlPBV70NH98U'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = 'R7KeNPjQ6SkLEKY8WlGtWucKmWFN9d'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Lieu
+            </p>
+        </div><div id = 'lFaInLKEOcLOOHR4essiPcn9S9anRD'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'Wsd7HsZV3f3ZLGPdK7HKLec29efnP0'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                Eglise Saint-Maurice
+            </p>
+        </div></div><div id = 'EWvPTdizQLjNB3OBrpFvdZfT2TG7p6'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = '1Aih6Xb5dmHsExrItOEMi9WNqc2Xtw'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = '4AfqWKnq55gjfJu7B4TADn0LSu6u6D'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Horaire
+            </p>
+        </div><div id = 'AQz1Q7JW5807xSOMFR6X1FqzyZBxsR'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'YH9TL2Pt93pXImQGIb3StrJfT6w2nv'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                16h
+            </p>
+        </div></div><div id = '0QF92qesMtpdMXzC27B9rhMlmb2I1f'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = 'yu8Zf6IE91fhmGUzSWVtz1pd310yyo'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = 'OjV0j2ilWw2ETh7spB1nAYHUs93STS'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Adresse
+            </p>
+        </div><div id = 'p0e4mcFrWsAEhJ6g5r2GnT50BsVVm1'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'VbxLuWTijfCunvgmmcqVsSzDIC8YRq'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                Place Museux, 51100 Reims
+            </p>
+        </div></div></div><div id = '2AqIUpExTE5DcbJoLvgq5ujGLalL1m'  class='PyWebWidget col-sm-6 col-md-4 col-lg-3' style = 'show-border : False;'  >
+            <p id = 'KhyBFwofJFFMBGz24Cp9a2V3zy1m4B'  class='PyWebWidget sous_titre_section' style = 'show-border : False;' >
+                Vin d'honneur
+            </p>
+        <div id = 'YGI8lojumdYRbgm4IoUD0yJhODAOQG'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = 'AtGXi60PCYnkVL7bfw8c1lFZucmrW8'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = '8gjG3883s864qIHp8iQBB13kUByMHe'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Lieu
+            </p>
+        </div><div id = 'AuXhejcUjrLdi1zBLQdGJru5UdvyNa'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'eaX0m31941Bk8MqRp0R2jWXYeIjV1Z'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                Palais du Tau
+            </p>
+        </div></div><div id = 'QfRR56hfbaimAM4bkNeChulWx4hfZl'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = 'Q0OsKS4QvJoiQeKylmARA7JnG5vJYg'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = 'ZNlhiXeGD2MjJOOHl4scpqgKZ1Pgh8'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Horaire
+            </p>
+        </div><div id = 'aUDXntsIntLfjsecb7Xl9USX92WKJt'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'FNtEl5iVhjefwwFiiP62m8a7RkOuNu'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                18h
+            </p>
+        </div></div><div id = 'CXBYSPWXejN0cU5B593MakF84dxtyo'  class='PyWebWidget row pww_horizontal_container_align_center' style = 'show-border : False;'  ><div id = 'AipNQTpQirnqdYQFqucVLkw8YSoCwK'  class='PyWebWidget col-4' style = 'show-border : False;'  >
+            <p id = '5BdRjdRyp1IyDjwH4IqOxqzfet4dFe'  class='PyWebWidget label_info_on_location' style = 'show-border : False;' >
+                Adresse
+            </p>
+        </div><div id = 'RFQqcd0I063ycP4dCT4zkucjoT0GEd'  class='PyWebWidget col-8' style = 'show-border : False;'  >
+            <p id = 'ZBx3ZMSG6TwYjJKuggd5Hojqb3rXmT'  class='PyWebWidget field_info_on_location' style = 'show-border : False;' >
+                2 Place du Cardinal Luçon, 51100 Reims
+            </p>
+        </div></div></div></div></div>
+<div id = 'KEINBmGrwkcp86xz3HgB2q8lPQKqAA'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'show-border : False;'  >
+                <iframe  src = "https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d41672.35291695883!2d4.039969!3d49.2475501!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0x47e9744ed52581af%3A0x2e2aafcbb4717ea9!2s%C3%89glise%20Saint-Maurice%2C%20Place%20Museux%2C%2051100%20Reims!3m2!1d49.246730799999995!2d4.0408612!4m5!1s0x47e97452e5ca9bdf%3A0x47b2b5d9336c1b2!2sPalais%20du%20Tau%2C%20Place%20du%20Cardinal%20Lu%C3%A7on%2C%20Reims!3m2!1d49.253440399999995!2d4.0347903!5e0!3m2!1sfr!2sfr!4v1608722055164!5m2!1sfr!2sfr"  width  = "600" height = "450" frameborder = "0" allowfullscreen = "true"  
+                aria-hidden="false" tabindex="0"
+                id = 'WzrPxh7qijlUveOtW9P4Adpgi8bTGe'  class='PyWebWidget' style = 'show-border : False;'  >
+                    
+                </iframe>
+        </div>
+<div id = 'section_photos'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'show-border : False;'  >
+            <p id = 'CqHwjg4y1KBgN5hqKF5dtPREblmsUE'  class='PyWebWidget titre_section' style = 'show-border : False;' >
+                Quelques souvenirs
+            </p>
+        <div id = '3issVP7bLwDq4XIugplH8nQJvvgH5i'  class='PyWebWidget row justify-content-center' style = 'show-border : False; max-width : 100%;'  ><div id = 'NQneb2l1Wz8Z9ZwN8a2OGxPT2Lm8Z5'  class='PyWebWidget col-sm-6' style = 'show-border : False; max-width : 700px;'  > 
+        <ul id = '5fPTUY8WiMvp4dosSihyr4BTWvuUyR'  class='PyWebWidget' style = 'show-border : False;' >
+            
+                    <li data-thumb="static/img/carousel/small/20acc6be-f7dc-4940-a0f0-c6141d45e5ae.jpg" data-src="static/img/carousel/normal/20acc6be-f7dc-4940-a0f0-c6141d45e5ae.jpg">
+                        <img src="static/img/carousel/normal/20acc6be-f7dc-4940-a0f0-c6141d45e5ae.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/5217b920-478e-4418-b4b6-12d6fe4491d6.jpg" data-src="static/img/carousel/normal/5217b920-478e-4418-b4b6-12d6fe4491d6.jpg">
+                        <img src="static/img/carousel/normal/5217b920-478e-4418-b4b6-12d6fe4491d6.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/95eca3a0-38f5-4082-adc8-ee501025fed8.jpg" data-src="static/img/carousel/normal/95eca3a0-38f5-4082-adc8-ee501025fed8.jpg">
+                        <img src="static/img/carousel/normal/95eca3a0-38f5-4082-adc8-ee501025fed8.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/b9e8f31b-35ce-4280-b829-3f4310910899.jpg" data-src="static/img/carousel/normal/b9e8f31b-35ce-4280-b829-3f4310910899.jpg">
+                        <img src="static/img/carousel/normal/b9e8f31b-35ce-4280-b829-3f4310910899.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/d0a280a1-d6cc-44ef-ba82-a17c27b4046d.jpg" data-src="static/img/carousel/normal/d0a280a1-d6cc-44ef-ba82-a17c27b4046d.jpg">
+                        <img src="static/img/carousel/normal/d0a280a1-d6cc-44ef-ba82-a17c27b4046d.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/d1942b25-c25f-4bcb-9336-89348c023a9e.jpg" data-src="static/img/carousel/normal/d1942b25-c25f-4bcb-9336-89348c023a9e.jpg">
+                        <img src="static/img/carousel/normal/d1942b25-c25f-4bcb-9336-89348c023a9e.jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/eb565d03-54cd-4f30-b33f-c8becced4520 (1).jpg" data-src="static/img/carousel/normal/eb565d03-54cd-4f30-b33f-c8becced4520 (1).jpg">
+                        <img src="static/img/carousel/normal/eb565d03-54cd-4f30-b33f-c8becced4520 (1).jpg" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/IMG_0584.JPG" data-src="static/img/carousel/normal/IMG_0584.JPG">
+                        <img src="static/img/carousel/normal/IMG_0584.JPG" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/IMG_0593.JPG" data-src="static/img/carousel/normal/IMG_0593.JPG">
+                        <img src="static/img/carousel/normal/IMG_0593.JPG" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/IMG_0594.JPG" data-src="static/img/carousel/normal/IMG_0594.JPG">
+                        <img src="static/img/carousel/normal/IMG_0594.JPG" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/IMG_0595.JPG" data-src="static/img/carousel/normal/IMG_0595.JPG">
+                        <img src="static/img/carousel/normal/IMG_0595.JPG" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+                    <li data-thumb="static/img/carousel/small/IMG_0596.JPG" data-src="static/img/carousel/normal/IMG_0596.JPG">
+                        <img src="static/img/carousel/normal/IMG_0596.JPG" />
+                        <div class="painting-description">
+                            <p>blblablaba</p>
+                        </div>
+                  </li>               
+                
+        </ul>
+        </div></div></div>
+<div id = 'section_liste_mariage'  class='PyWebWidget pww_full_width_not_scrolling_container section' style = 'show-border : False;'  >
+            <p id = 'I0NWjCymcUzzE7DPI4hNXhhlZloMqA'  class='PyWebWidget titre_section' style = 'show-border : False;' >
+                Notre liste de mariage
+            </p>
+        
+            <a id = 'bAfKSqmD6RqUVMUPKuqhvUdXENAZjY'  class='PyWebWidget sous_titre_section' style = 'show-border : False;'  href = '#'>
+                Votre présence nous fera très plaisir. Si vous souhaitez nous faire un petit cadeau, voici quelques suggestions.
+            </a>
+        
+                <a id = 'gift_icon'  class='PyWebWidget' style = 'show-border : False;'  href = "#"><i class="fas fa-gift"></i></a>
+                </div>
+                </body>
+                
+                <script>
+                    $(window).off("scroll");
+ $(window).on("scroll", 
+ function(event){
+ console.log('Event triggered : scroll page');
+ 
+ 
+ if ($("#navbar").offset().top > 50) {
+ $("#navbar").addClass("navbar_when_scrolled_down");
+ } else {
+ $("#navbar").removeClass("navbar_when_scrolled_down");
+ }
+ 
+ 
+ }
+ ); 
+ 
+$("#u33Yu4TEsRM5TRKkPVWsMJPjv1Nlum").off("click");
+ $("#u33Yu4TEsRM5TRKkPVWsMJPjv1Nlum").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = u33Yu4TEsRM5TRKkPVWsMJPjv1Nlum');
+ 
+ $('#menu_with_navbar_links').toggleClass('zero_size_when_small_screen', duration = 500); 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+ var obs_click_outside_already_running_for_id_menu_with_navbar_links = false ; 
+ 
+ $('html').click(function(event) {
+ 
+ var self_still_exist = ($('#menu_with_navbar_links').length !=0) ;
+ 
+ 
+ if(self_still_exist){
+ 
+ var exists = (typeof list_of_css_selector_of_blocking_click_outside != 'undefined') ; 
+ if(exists){
+ while(list_of_css_selector_of_blocking_click_outside.length !=0){
+ 
+ var still_exist = ($(list_of_css_selector_of_blocking_click_outside[0]).length !=0) ;
+ 
+ if(still_exist){
+ blocking_css_selector = list_of_css_selector_of_blocking_click_outside[0];
+ break;
+ }
+ else{
+ list_of_css_selector_of_blocking_click_outside.shift(); 
+ }
+ }
+ 
+ if(list_of_css_selector_of_blocking_click_outside.length ==0){
+ blocking_css_selector = "";
+ }
+ }
+ else{
+ blocking_css_selector = "";
+ }
+ 
+var blocked = ( (blocking_css_selector != '#menu_with_navbar_links') && (blocking_css_selector != '') ); 
+ 
+ /* if clicked element is not your element and parents aren't your div */
+ if ((event.target.id != 'menu_with_navbar_links') && ($(event.target).parents('#menu_with_navbar_links').length == 0) && (!obs_click_outside_already_running_for_id_menu_with_navbar_links) ) {
+ 
+ obs_click_outside_already_running_for_id_menu_with_navbar_links = true ; 
+ 
+ if(!blocked){
+ 
+ console.log('Event triggered : click outside id = menu_with_navbar_links');
+ 
+ setTimeout(() => { $('#menu_with_navbar_links').addClass('zero_size_when_small_screen', duration = 500) ; }, 50);
+ 
+ 
+ }
+ 
+ setTimeout(() => { obs_click_outside_already_running_for_id_menu_with_navbar_links = false; }, 100);
+ }
+ }
+ });
+ 
+$("#uqsD1mPMmSoy0cb1W2CrH9Vj9IL1Wj").off("click");
+ $("#uqsD1mPMmSoy0cb1W2CrH9Vj9IL1Wj").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = uqsD1mPMmSoy0cb1W2CrH9Vj9IL1Wj');
+ 
+ 
+ $('html, body').animate(
+ {
+ scrollTop: $('#section_save_the_date').offset().top
+ }, duration = 500
+ );
+ 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+$("#mBu9e6TICWNEW4i1Y894q0fDqfPebJ").off("click");
+ $("#mBu9e6TICWNEW4i1Y894q0fDqfPebJ").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = mBu9e6TICWNEW4i1Y894q0fDqfPebJ');
+ 
+ 
+ $('html, body').animate(
+ {
+ scrollTop: $('#lieux_section').offset().top
+ }, duration = 500
+ );
+ 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+$("#KIiTYrwvIqhKyEXZaiYBqOyCmMVrTL").off("click");
+ $("#KIiTYrwvIqhKyEXZaiYBqOyCmMVrTL").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = KIiTYrwvIqhKyEXZaiYBqOyCmMVrTL');
+ 
+ 
+ $('html, body').animate(
+ {
+ scrollTop: $('#section_photos').offset().top
+ }, duration = 500
+ );
+ 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+$("#0EaJ3V47pFPVm1cLpD5LdfnLE3I3gV").off("click");
+ $("#0EaJ3V47pFPVm1cLpD5LdfnLE3I3gV").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = 0EaJ3V47pFPVm1cLpD5LdfnLE3I3gV');
+ 
+ 
+ $('html, body').animate(
+ {
+ scrollTop: $('#section_liste_mariage').offset().top
+ }, duration = 500
+ );
+ 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+$("#29tlqQ7UYJywD32eASIpRtUNBFnomX").off("click");
+ $("#29tlqQ7UYJywD32eASIpRtUNBFnomX").on("click", 
+ function(event){
+ console.log('Event triggered : click on id = 29tlqQ7UYJywD32eASIpRtUNBFnomX');
+ 
+ 
+ $('html, body').animate(
+ {
+ scrollTop: $('#section_save_the_date').offset().top
+ }, duration = 500
+ );
+ 
+ 
+ event.stopImmediatePropagation(); 
+ }
+ ); 
+ 
+ 
+ $('#5fPTUY8WiMvp4dosSihyr4BTWvuUyR').lightSlider({
+ gallery:true,
+ item:1,
+ loop:true,
+ thumbItem:9,
+ slideMargin:0,
+ enableDrag: false,
+ currentPagerPosition:'middle',
+ onSliderLoad: function(el) {
+ el.lightGallery({
+ selector: '#5fPTUY8WiMvp4dosSihyr4BTWvuUyR .lslide'
+ });
+ } 
+ }
+ );
+ 
+
+                </script>
+            </html>
+
+        
